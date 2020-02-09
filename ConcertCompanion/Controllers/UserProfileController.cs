@@ -20,7 +20,7 @@ namespace ConcertCompanion.Controllers
         public IEnumerable<UserProfile> Get(string userId)
         {
             // dnwk7y2o86oy14bwmmzgwetfu
-            var client = new MongoClient("mongodb://adminUser:Thinkpad@34.83.48.61:27017");
+            var client = new MongoClient("dummy");
             var database = client.GetDatabase("TSpotifyDB");
             var filter = Builders<UserProfile>.Filter.Eq("Id", userId);
             var currentUser = database.GetCollection<UserProfile>("users").Find(filter).FirstOrDefault();
